@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+
+matrix:
+    include:
+        - env: image=garnet
+          language: java
+        - env: image=amethyst
+          language: julia
+
+services:
+    - mysql
+install: true
+script:
+    - mysql -e 'SELECT * from mysql.user\G;'
+    - mysql -e 'DESC mysql.user\G;'
