@@ -1,16 +1,14 @@
+language: python
 dist: trusty
 sudo: false
 
-matrix:
-    include:
-        - env: image=garnet
-          language: java
-        - env: image=amethyst
-          language: julia
+install: skip
 
-services:
-    - mysql
-install: true
 script:
-    - mysql -e 'SELECT * from mysql.user\G;'
-    - mysql -e 'DESC mysql.user\G;'
+  - which hg
+  - hg help
+  - dpkg -l | grep -i mercurial
+  - dpkg -L mercurial | grep hg$
+
+notifications:
+  email: false
