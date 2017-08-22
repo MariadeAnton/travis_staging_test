@@ -1,16 +1,12 @@
 dist: trusty
 sudo: false
+language: ruby
 
-matrix:
-    include:
-        - env: image=garnet
-          language: java
-        - env: image=amethyst
-          language: julia
-
-services:
-    - mysql
-install: true
+install:
+    - phantomjs --version
+    
 script:
-    - mysql -e 'SELECT * from mysql.user\G;'
-    - mysql -e 'DESC mysql.user\G;'
+    - df -h
+    
+notifications:
+    email: never
