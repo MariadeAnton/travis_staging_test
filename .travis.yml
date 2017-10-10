@@ -1,9 +1,10 @@
-nguage: objective-c
+language: objective-c
 script:
   - df -h /
   - uname -a
   - xcodebuild -version
   - system_profiler SPHardwareDataType
+  - ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 matrix:
   include:
@@ -23,3 +24,5 @@ matrix:
     osx_image: xcode9
   - os: osx
     osx_image: xcode9.1
+
+
