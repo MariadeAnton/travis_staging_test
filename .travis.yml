@@ -24,5 +24,3 @@ matrix:
     osx_image: xcode9
   - os: osx
     osx_image: xcode9.1
-
-
