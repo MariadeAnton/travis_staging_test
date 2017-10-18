@@ -8,5 +8,4 @@ matrix:
 
 install: cat ~/build.sh
 
-script:
-  - sudo apt-get update
+script: sudo apt-get update
